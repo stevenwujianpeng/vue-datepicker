@@ -12,3 +12,11 @@ npm run dev
 npm run build
 
 ```
+
+# usage
+
+```javascript
+
+<date-picker :val.sync="curDate" type="date"></date-picker>
+
+```
