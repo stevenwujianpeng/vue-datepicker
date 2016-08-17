@@ -279,6 +279,7 @@
 
 
 <style lang="less" rel="stylesheet/less" scoped>
+  @import "icon";
   .date-picker {
     width: 200px;
     position: relative;

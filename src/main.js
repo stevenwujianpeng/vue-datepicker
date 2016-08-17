@@ -1,5 +1,4 @@
 import '../node_modules/bootstrap/less/bootstrap.less'
-import 'assets/icon.less'
 import 'assets/normalize.less'
 import Vue from 'vue'
 import App from './App'
