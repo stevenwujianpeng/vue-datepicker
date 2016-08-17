@@ -32,7 +32,7 @@ npm run build
 | type    | String    |  'date'   | 'date' => 输出YYYY-MM-DD格式的日期时间  <br>   'date-time' => 输出YYYY-MM-DD HH:mm:ss的日期时间|
 
 ## 如何引入到你的项目中
-  1. 复制date-picker文件到你的components组件文件下
+  1. 复制date-picker文件(src/components目录下)到你的components组件文件下
   2. 引入组件,并声明,也可以全局注册组件
 
 ## 使用例子
