@@ -16,9 +16,11 @@ npm run build
 ## usage
 
 ```javascript
-
+// 只选择日期
 <date-picker :val.sync="curDate" type="date"></date-picker>
 
+// 可以选择日期和时间
+<date-picker :val.sync="curDate" type="date-time"></date-picker>
 ```
 ## API
 
