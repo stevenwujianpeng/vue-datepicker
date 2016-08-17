@@ -36,7 +36,7 @@
         <hr>
         <table class="time">
           <tbody>
-          <tr>k
+          <tr>
             <td class="hour">
               <input type="text"
                      v-model="hour"
