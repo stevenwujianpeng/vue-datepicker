@@ -37,6 +37,7 @@ npm run build
 
 ## 使用例子
 ```javascript
+<!-- App.vue -->
 <template>
   <div id="app">
     <form @submit.prevent="">
