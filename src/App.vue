@@ -2,7 +2,7 @@
   <div id="app">
     <form @submit.prevent="">
       <div class="form-group">
-        <date-picker :val.sync="curDate" type="date"></date-picker>
+        <!--<date-picker :val.sync="curDate" type="date"></date-picker>-->
         <date-picker :val.sync="curDate" type="date-time"></date-picker>
       </div>
     </form>
