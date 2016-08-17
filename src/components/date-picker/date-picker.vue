@@ -1,7 +1,5 @@
 <template>
   <div class="date-picker" @click="datePickClick">
-    <div>{{year}}-{{month}}-{{day}}</div>
-    <div>{{checked.year}}-{{checked.month}}-{{checked.day}}</div>
     <input type="text" class="form-control date-picker-input"
            @focus="select()"
            v-model="val"

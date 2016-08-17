@@ -20,3 +20,5 @@ npm run build
 <date-picker :val.sync="curDate" type="date"></date-picker>
 
 ```
+
+# API
