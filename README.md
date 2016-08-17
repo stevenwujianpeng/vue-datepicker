@@ -75,3 +75,5 @@ npm run build
 </style>
 
 ```
+## 备注:
+ 1. 样式基于less
