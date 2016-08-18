@@ -13,7 +13,9 @@ npm run build
 ```
 ## feature
  1. 支持两种类型的时间选择- 日期选择 & 日期时间选择
-
+## requirement:
+ 1. vue.js
+ 2. date-fns (时间库)
 ## usage
 
 ```javascript
@@ -27,7 +29,7 @@ npm run build
 ## API
 
 |  选项   |   类型    | 默认值    | 说明 |
-| :----  |  :----   | :----    | :----|
+| :----   |  :----   | :----    | :----|
 |   val   |   String  | ' ' (空)  | 同步更新组件父子组件间时间的值|
 | type    | String    |  'date'   | 'date' => 输出YYYY-MM-DD格式的日期时间  <br>   'date-time' => 输出YYYY-MM-DD HH:mm:ss的日期时间|
 
