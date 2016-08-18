@@ -1,5 +1,6 @@
 <template>
   <div class="date-picker" @click="datePickClick">
+    <p>{{checked.day}}</p>
     <input type="text" class="form-control date-picker-input"
            @focus="select()"
            v-model="val"
@@ -217,7 +218,7 @@
         }
       },
       selectDayTime () {
-        this.val = format(new Date(this.year, this.month, this.day, this.hour, this.minute, this.second), formatMap[this.type])
+        this.val = format(new Date(this.checked.year, this.checked.month, this.checked.day, this.hour, this.minute, this.second), formatMap[this.type])
         this.show = false
       },
       selectHour (ev) {
