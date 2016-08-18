@@ -42,14 +42,14 @@
               <input type="text"
                      v-model="hour"
                      class="hour-input"
-                     @click="selectHour($event)"
+                     @click="selectTime($event,'Hour')"
               >
               <table class="hour-container" v-show="showSelectHour">
                 <tbody>
                 <tr v-for="item in HourRange">
                   <td v-for="i in item"
                       :class="{'active': i == hour}"
-                      @click="selectQuickHour(i)"
+                      @click="selectQuick('hour', i)"
                   >{{i}}
                   </td>
                 </tr>
@@ -61,7 +61,7 @@
               <input type="text"
                      v-model="minute"
                      class="minute-input"
-                     @click="selectMinute($event)"
+                     @click="selectTime($event,'Minute')"
               >
               <table class="minute-container" v-if="showSelectMinute">
                 <tbody>
@@ -69,7 +69,7 @@
                   <td v-for="i in item"
                       track-by="$index"
                       :class="{'active': i == minute}"
-                      @click="selectQuickMinute(i)"
+                      @click="selectQuick('minute', i)"
                   >{{i}}
                   </td>
                 </tr>
@@ -81,7 +81,7 @@
               <input type="text"
                      v-model="second"
                      class="second-input"
-                     @click="selectSecond($event)"
+                     @click="selectTime($event,'Second')"
               >
               <table class="second-container" v-show="showSelectSecond">
                 <tbody>
@@ -89,7 +89,7 @@
                   <td v-for="i in SecondRange"
                       track-by="$index"
                       :class="{'active': i == second}"
-                      @click="selectQuickSecond(i)"
+                      @click="selectQuick('second', i)"
                   >{{i}}
                   </td>
                 </tr>
@@ -221,29 +221,15 @@
         this.val = format(new Date(this.checked.year, this.checked.month, this.checked.day, this.hour, this.minute, this.second), formatMap[this.type])
         this.show = false
       },
-      selectHour (ev) {
+      selectTime (ev, type) {
+        this.hideQuickSelect()
         let el = ev.srcElement
         el.select()
-        this.showSelectHour = true
+        this[`showSelect${type}`] = true
+        ev.stopPropagation()
       },
-      selectMinute (ev) {
-        let el = ev.srcElement
-        el.select()
-        this.showSelectMinute = true
-      },
-      selectSecond (ev) {
-        let el = ev.srcElement
-        el.select()
-        this.showSelectSecond = true
-      },
-      selectQuickHour (hour) {
-        this.hour = hour
-      },
-      selectQuickMinute (minute) {
-        this.minute = minute
-      },
-      selectQuickSecond (second) {
-        this.second = second
+      selectQuick (type, value) {
+        this[type] = value
       },
       bodyClick (ev) {
         let targetDom = ev.target
@@ -252,15 +238,18 @@
         }
       },
       datePickClick (ev) {
-        if (this.type === 'date-time' && ev.target.nodeName !== 'INPUT') {
-          timeMap.some((time) => {
-            if (this[`showSelect${time}`]) {
-              this[`showSelect${time}`] = false
-              return true
-            }
-          })
+        if (this.type === 'date-time') {
+          this.hideQuickSelect()
         }
         ev.stopPropagation()
+      },
+      hideQuickSelect () {
+        timeMap.some((time) => {
+          if (this[`showSelect${time}`]) {
+            this[`showSelect${time}`] = false
+            return true
+          }
+        })
       },
       renderDays () {
         this.days = getDays(this.year, this.month, this.day)
