@@ -13,6 +13,7 @@ npm run build
 ```
 ## feature
  1. 支持两种类型的时间选择- 日期选择 & 日期时间选择
+ 
 ## requirement:
  1. vue.js
  2. date-fns (时间库)
