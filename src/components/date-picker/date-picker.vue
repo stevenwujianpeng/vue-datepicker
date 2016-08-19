@@ -220,9 +220,8 @@
         this.show = false
       },
       selectTime (ev, type) {
+        ev.srcElement.select()
         this.hideQuickSelect()
-        let el = ev.srcElement
-        el.select()
         this[`showSelect${type}`] = true
         ev.stopPropagation()
       },
