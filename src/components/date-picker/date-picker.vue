@@ -3,6 +3,7 @@
     <input type="text" class="form-control date-picker-input"
            @focus="select()"
            v-model="val"
+           placeholder="{{inputPlaceholder}}"
     >
     <div class="date-picker-container" v-show="show">
       <div class="header clearfix">
@@ -128,6 +129,10 @@
       },
       type: {
         type: String
+      },
+      inputPlaceholder: {
+        type: String,
+        defautl: ''
       }
     },
     data () {
