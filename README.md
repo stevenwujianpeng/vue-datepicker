@@ -34,6 +34,8 @@ npm run build
 | :----   |  :----   | :----    | :----|
 |   val   |   String  | ' ' (空)  | 同步更新组件父子组件间时间的值|
 | type    | String    |  'date'   | 'date' => 输出YYYY-MM-DD格式的日期时间  <br>   'date-time' => 输出YYYY-MM-DD HH:mm:ss的日期时间|
+|  input-placeholder   |   String  | ' ' (空)  | input为空时的placeholder文案|
+
 
 ## 如何引入到你的项目中
   1. 复制date-picker文件(src/components目录下)到你的components组件文件下
