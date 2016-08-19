@@ -1,6 +1,5 @@
 <template>
   <div class="date-picker" @click="datePickClick">
-    <p>{{checked.day}}</p>
     <input type="text" class="form-control date-picker-input"
            @focus="select()"
            v-model="val"
@@ -112,7 +111,6 @@
   import {
     getDays,
     getToday,
-    WeeksMap,
     MonthsMap,
     HourRange,
     MinuteRange,
@@ -232,9 +230,9 @@
         this[type] = value
       },
       bodyClick (ev) {
-        let targetDom = ev.target
+        let targetDom = ev.currentTarget
         if (targetDom.querySelector('.date-picker')) {
-          return this.show = false
+          this.show = false
         }
       },
       datePickClick (ev) {
@@ -273,6 +271,7 @@
     width: 200px;
     position: relative;
     &-container {
+      background: #fff;
       position: absolute;
       left: 0;
       top: 100%;
@@ -307,6 +306,7 @@
     }
     .days {
       &-header {
+        padding: 0;
         margin: 0;
         li {
           float: left;
@@ -319,6 +319,8 @@
         }
       }
       &-body {
+        padding: 0;
+        margin: 0;
         li {
           float: left;
           width: 30px;
@@ -399,4 +401,3 @@
     }
   }
 </style>
-
