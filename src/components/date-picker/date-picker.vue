@@ -7,10 +7,10 @@
     <div class="date-picker-container" v-show="show">
       <div class="header clearfix">
         <span class="header-title">{{year}}年{{realMonth}}月</span>
-        <span class="prevYear glyphicon glyphicon-backward" @click="year--"></span>
-        <span class="prevMonth glyphicon glyphicon-triangle-left" @click="prevMonth()"></span>
-        <span class="nextYear glyphicon glyphicon-forward" @click="year++"></span>
-        <span class="nextMonth glyphicon glyphicon-triangle-right" @click="nextMonth()"></span>
+        <span class="prevYear icon icon-double-prev" @click="year--"></span>
+        <span class="prevMonth icon icon-prev" @click="prevMonth()"></span>
+        <span class="nextYear icon icon-double-next" @click="year++"></span>
+        <span class="nextMonth icon icon-next" @click="nextMonth()"></span>
       </div>
       <div class="days">
         <ul class="days-header clearfix">
@@ -267,7 +267,7 @@
 
 <style lang="less" rel="stylesheet/less">
   .date-picker {
-    width: 200px;
+    display: inline-block;
     position: relative;
     &-container {
       background: #fff;
